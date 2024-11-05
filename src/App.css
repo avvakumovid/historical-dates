@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Sans:wght@400;700&display=swap');
+@import url('swiper/css');
+:root {
+  --primary-color: hsl(219, 30%, 37%);
+  --secondary-color: hsl(239, 82%, 65%);
+  --accent-color: hsl(329, 82%, 65%);
+  --background-color: hsl(228, 29%, 97%);
+  --grey: hsl(221, 21%, 85%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  font-family: 'PT Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+@keyframes transform {
+  50% {
+    --ca: calc(calc(var(--i) + 0.5) * var(--ba));
+  }
+  to {
+    --ca: calc(calc(var(--i) + 1) * var(--ba));
+  }
+}

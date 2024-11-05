@@ -1,0 +1,212 @@
+.container {
+  width: 1440px;
+  height: 1080px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 170px;
+  padding-bottom: 100px;
+}
+
+.heading {
+  position: relative;
+  font-size: 56px;
+  font-weight: 700;
+  width: 350px;
+  padding-left: 78px;
+  border-left: 5px solid;
+  border-image: linear-gradient(180deg, #3877ee -5%, #ef5da8 85%) 1;
+}
+
+/* .box {
+  position: absolute;
+  content: '';
+  width: calc(50% - 3px);
+  height: calc(530px - 3px);
+  border: 2px solid var(--grey);
+  display: block;
+}
+
+.box1 {
+  top: 0;
+}
+.box2 {
+  top: calc(530px - 1px);
+  height: 50%;
+}
+.box3 {
+  top: 0;
+  right: 0;
+}
+.box4 {
+  top: calc(530px - 1px);
+  height: 50%;
+  right: 0;
+} */
+
+.wrapper {
+  --circle-transition: 700ms;
+  top: 265px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 78px;
+}
+
+@property --start {
+  syntax: '<integer>';
+  initial-value: 1950;
+  inherits: false;
+}
+@property --end {
+  syntax: '<integer>';
+  initial-value: 1950;
+  inherits: false;
+}
+
+/* .years {
+  font-size: 200px;
+  font-weight: 700;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: max-content;
+}
+.start {
+  transition: --start var(--circle-transition, 1s);
+  counter-reset: start var(--start);
+  color: var(--secondary-color);
+}
+.start::after {
+  content: counter(start);
+}
+
+.end {
+  transition: --end var(--circle-transition, 1s);
+  counter-reset: end var(--end);
+  color: var(--accent-color);
+}
+
+.end::after {
+  content: counter(end);
+} */
+
+.circle {
+  align-self: center;
+  aspect-ratio: 1;
+  --d: 6.5em; /* image size */
+  --rel: 1; /* how much extra space we want between images, 1 = 1 image size */
+  --ba: 1turn / var(--m);
+  --r: 265px;
+  /* calc(0.5 * (1 + var(--rel)) * var(--d) / tan(0.5 * var(--ba))); circle radius */
+  display: grid;
+  width: calc(2 * var(--r) - 2px); /* container size */
+  border-radius: 100%;
+  border: 1px solid;
+  border-color: var(--grey);
+}
+
+.point {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  --radius: 6px;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  grid-area: 1/ 1;
+  place-self: center;
+  width: var(--radius);
+  height: var(--radius);
+  border-radius: 100%;
+  --ca: calc(calc(var(--i) + var(--v, 0)) * var(--ba));
+  transform: rotate(var(--ca)) translate(var(--r)) rotate(calc(-1 * var(--ca)));
+  transition: var(--circle-transition, 1s) all ease-in-out;
+  cursor: pointer;
+  font-size: 0;
+}
+
+.point::before {
+  --_radius: calc(20px + 6px);
+  content: '';
+
+  position: absolute;
+  top: -15px; /* Отступ сверху */
+  left: -15px; /* Отступ слева */
+  right: -15px; /* Отступ справа */
+  bottom: -15px; /* Отступ снизу */
+  border-radius: 100%; /* Закругленные углы */
+}
+
+.point:hover,
+.point[data-active='is-active'] {
+  --radius: 56px;
+  background-color: var(--background-color);
+  border-color: hsl(219, 12%, 62%);
+  font-size: 20px;
+}
+
+@keyframes fade {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+.name {
+  visibility: hidden;
+  opacity: 0;
+  font-size: 20px;
+  font-weight: 700;
+  position: absolute;
+  left: calc(var(--radius) + 20px);
+  transition: all 300ms;
+}
+.point:hover .name,
+.point[data-active='is-active'] .name {
+  visibility: visible;
+  opacity: 1;
+}
+
+.counter {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.arrows {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+}
+
+.arrow {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  border: 1px solid var(--grey);
+  background-color: var(--background-color);
+  cursor: pointer;
+  transition: background ease-in 0.3s;
+}
+
+.arrow:hover {
+  background-color: #fff;
+}
+
+.arrow:disabled {
+  opacity: 0.5;
+}
+
+.reverseX {
+  transform: scaleX(-1);
+}

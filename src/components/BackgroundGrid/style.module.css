@@ -1,0 +1,25 @@
+.cell {
+  position: absolute;
+  content: '';
+  width: calc(50% - 3px);
+  height: calc(530px - 3px);
+  border: 2px solid var(--grey);
+  display: block;
+}
+
+.cellTopLeft {
+  top: 0;
+}
+.cellTopRight {
+  top: calc(530px - 1px);
+  height: 50%;
+}
+.cellBottomLeft {
+  top: 0;
+  right: 0;
+}
+.cellBottomRight {
+  top: calc(530px - 1px);
+  height: 50%;
+  right: 0;
+}
