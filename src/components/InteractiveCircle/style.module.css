@@ -1,22 +1,3 @@
-.container {
-  width: 1440px;
-  height: 1080px;
-  margin: 0 auto;
-  position: relative;
-  padding-top: 170px;
-  padding-bottom: 100px;
-}
-
-.heading {
-  position: relative;
-  font-size: 56px;
-  font-weight: 700;
-  width: 350px;
-  padding-left: 78px;
-  border-left: 5px solid;
-  border-image: linear-gradient(180deg, #3877ee -5%, #ef5da8 85%) 1;
-}
-
 .wrapper {
   --circle-transition: 700ms;
   top: 265px;
@@ -40,35 +21,6 @@
   initial-value: 1950;
   inherits: false;
 }
-
-/* .years {
-  font-size: 200px;
-  font-weight: 700;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  width: max-content;
-}
-.start {
-  transition: --start var(--circle-transition, 1s);
-  counter-reset: start var(--start);
-  color: var(--secondary-color);
-}
-.start::after {
-  content: counter(start);
-}
-
-.end {
-  transition: --end var(--circle-transition, 1s);
-  counter-reset: end var(--end);
-  color: var(--accent-color);
-}
-
-.end::after {
-  content: counter(end);
-} */
 
 .circle {
   align-self: center;
@@ -100,7 +52,7 @@
   border-radius: 100%;
   --ca: calc(calc(var(--i) + var(--v, 0)) * var(--ba));
   transform: rotate(var(--ca)) translate(var(--r)) rotate(calc(-1 * var(--ca)));
-  transition: var(--circle-transition, 1s) all ease-in-out;
+  transition: 500ms all ease-in-out;
   cursor: pointer;
   font-size: 0;
 }
@@ -108,13 +60,12 @@
 .point::before {
   --_radius: calc(20px + 6px);
   content: '';
-
   position: absolute;
-  top: -15px; /* Отступ сверху */
-  left: -15px; /* Отступ слева */
-  right: -15px; /* Отступ справа */
-  bottom: -15px; /* Отступ снизу */
-  border-radius: 100%; /* Закругленные углы */
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  border-radius: 100%;
 }
 
 .point:hover,
@@ -152,35 +103,4 @@
   opacity: 1;
 }
 
-.counter {
-  margin-bottom: 20px;
-  font-size: 14px;
-}
 
-.arrows {
-  display: flex;
-  flex-direction: row;
-  column-gap: 20px;
-}
-
-.arrow {
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  border: 1px solid var(--grey);
-  background-color: var(--background-color);
-  cursor: pointer;
-  transition: background ease-in 0.3s;
-}
-
-.arrow:hover {
-  background-color: #fff;
-}
-
-.arrow:disabled {
-  opacity: 0.5;
-}
-
-.reverseX {
-  transform: scaleX(-1);
-}

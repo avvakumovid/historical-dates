@@ -2,6 +2,7 @@ import styles from './style.module.css';
 import { HistoricalDateType } from '../../types/types';
 import { formatNumber } from '../../utils/formatNumber';
 import { getStyleProp } from '../../utils/getStyleProp';
+import { ArrowsButtons } from '../ArrowsButtons/ArrowsButtons';
 
 interface InteractiveCircleProps {
   historicalDateTypes: HistoricalDateType[];
@@ -30,17 +31,14 @@ export const InteractiveCircle = ({ historicalDateTypes, current, onNext, onPrev
           </a>
         ))}
       </div>
-      <span className={styles.counter}>
-        {formatNumber(current)}/{formatNumber(historicalDateTypes.length)}
-      </span>
-      <div className={styles.arrows}>
-        <button onClick={onPrev} disabled={current === 1} className={styles.arrow}>
-          <img src='./arrow.svg' alt='left arrow' />
-        </button>
-        <button onClick={onNext} disabled={current === historicalDateTypes.length} className={styles.arrow}>
-          <img className={styles.reverseX} src='./arrow.svg' alt='right arrow' />
-        </button>
-      </div>
+      <ArrowsButtons
+        current={current}
+        total={historicalDateTypes.length}
+        isNextDisabled={current === 1}
+        isPrevDisabled={current === historicalDateTypes.length}
+        onNext={onNext}
+        onPrev={onPrev}
+      />
     </div>
   );
 };

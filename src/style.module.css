@@ -20,3 +20,26 @@
 .circle {
   height: 530px;
 }
+
+.arrowsButtons {
+  display: none;
+}
+
+@media (max-width: 520px) {
+  .container {
+    padding-top: 59px;
+    padding-inline: 20px;
+  }
+  .circle {
+    display: none;
+  }
+  .heading {
+    font-size: 20px;
+    border: 0;
+    padding: 0;
+    width: 125px;
+  }
+  .arrowsButtons {
+    display: block;
+  }
+}

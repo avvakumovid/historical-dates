@@ -27,3 +27,14 @@
 .end::after {
   content: counter(end);
 }
+
+@media (max-width: 520px) {
+  .years {
+    font-size: 56px;
+    position: initial;
+    margin: 0;
+    padding-block: 56px;
+
+    border-bottom: 1px solid var(--grey);
+  }
+}

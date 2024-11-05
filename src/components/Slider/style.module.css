@@ -6,7 +6,6 @@
   padding-inline: 78px;
 }
 
-
 @keyframes fade {
   from {
     opacity: 0;
@@ -31,4 +30,29 @@
   font-size: 25px;
   color: hsl(219, 84%, 58%);
   font-family: 'Bebas Neue', sans-serif;
+}
+
+@media (max-width: 520px) {
+  .swiper {
+    padding-top: 20px;
+    padding-inline: 0;
+    padding-bottom: 78px;
+    height: 215px;
+  }
+
+  .slide {
+    width: 166px !important;
+    margin-right: 25px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .slide span {
+    width: 166px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
 }

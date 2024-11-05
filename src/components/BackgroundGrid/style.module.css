@@ -23,3 +23,9 @@
   height: 50%;
   right: 0;
 }
+
+@media (max-width: 520px) {
+  .cell {
+    display: none;
+  }
+}

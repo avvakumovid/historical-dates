@@ -6,6 +6,7 @@ import { Years } from './components/Years/Years';
 import { dateType, historicalDateList } from './types/types';
 import { useState } from 'react';
 import { Slider } from './components/Slider/Slider';
+import { ArrowsButtons } from './components/ArrowsButtons/ArrowsButtons';
 
 function App() {
   const [current, setCurrent] = useState(1);
@@ -30,6 +31,16 @@ function App() {
         />
       </div>
       <Slider key={historicalDateList[current - 1].type.id} historicalDates={historicalDateList[current - 1].dates} />
+      <div className={styles.arrowsButtons}>
+        <ArrowsButtons
+          current={current}
+          onNext={handleNext}
+          onPrev={handlePrev}
+          isNextDisabled={current === 1}
+          isPrevDisabled={current === dateType.length}
+          total={dateType.length}
+        />
+      </div>
     </div>
   );
 }
