@@ -1,6 +1,5 @@
 import styles from './style.module.css';
 import { HistoricalDateType } from '../../types/types';
-import { formatNumber } from '../../utils/formatNumber';
 import { getStyleProp } from '../../utils/getStyleProp';
 import { ArrowsButtons } from '../ArrowsButtons/ArrowsButtons';
 

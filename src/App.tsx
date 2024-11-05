@@ -23,7 +23,7 @@ function App() {
       <Years start={dateType[current - 1].yearStart} end={dateType[current - 1].yearEnd} />
       <div className={styles.circle}>
         <InteractiveCircle
-          historicalDateTypes={dateType}
+          historicalDateTypes={historicalDateList.map(date => date.type)}
           onNext={handleNext}
           onPrev={handlePrev}
           current={current}
@@ -46,7 +46,3 @@ function App() {
 }
 
 export default App;
-
-// <div>
-//   {/* <InteractiveCircle  historicalDateTypes={dateType}/> */}
-// </div>
